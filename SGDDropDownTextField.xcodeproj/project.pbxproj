@@ -15,6 +15,9 @@
 		481E887A1D0AC63400D2183C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481E88781D0AC63400D2183C /* LaunchScreen.storyboard */; };
 		481E88851D0AC63400D2183C /* SGDDropDownTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E88841D0AC63400D2183C /* SGDDropDownTextFieldTests.m */; };
 		481E88901D0AC63400D2183C /* SGDDropDownTextFieldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E888F1D0AC63400D2183C /* SGDDropDownTextFieldUITests.m */; };
+		481E88A31D0AC67900D2183C /* DropDownTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E889E1D0AC67900D2183C /* DropDownTable.m */; };
+		481E88A41D0AC67900D2183C /* DropdownTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E88A01D0AC67900D2183C /* DropdownTableViewCell.m */; };
+		481E88A51D0AC67900D2183C /* SGDDropDownTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E88A21D0AC67900D2183C /* SGDDropDownTextField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		481E888B1D0AC63400D2183C /* SGDDropDownTextFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGDDropDownTextFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		481E888F1D0AC63400D2183C /* SGDDropDownTextFieldUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGDDropDownTextFieldUITests.m; sourceTree = "<group>"; };
 		481E88911D0AC63400D2183C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481E889D1D0AC67900D2183C /* DropDownTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropDownTable.h; sourceTree = "<group>"; };
+		481E889E1D0AC67900D2183C /* DropDownTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropDownTable.m; sourceTree = "<group>"; };
+		481E889F1D0AC67900D2183C /* DropdownTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DropdownTableViewCell.h; sourceTree = "<group>"; };
+		481E88A01D0AC67900D2183C /* DropdownTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DropdownTableViewCell.m; sourceTree = "<group>"; };
+		481E88A11D0AC67900D2183C /* SGDDropDownTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGDDropDownTextField.h; sourceTree = "<group>"; };
+		481E88A21D0AC67900D2183C /* SGDDropDownTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGDDropDownTextField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,7 @@
 				481E886E1D0AC63400D2183C /* AppDelegate.m */,
 				481E88701D0AC63400D2183C /* ViewController.h */,
 				481E88711D0AC63400D2183C /* ViewController.m */,
+				4829A03E1D0AE2F8000CCB74 /* Text field supporting lib */,
 				481E88731D0AC63400D2183C /* Main.storyboard */,
 				481E88761D0AC63400D2183C /* Assets.xcassets */,
 				481E88781D0AC63400D2183C /* LaunchScreen.storyboard */,
@@ -138,6 +148,19 @@
 				481E88911D0AC63400D2183C /* Info.plist */,
 			);
 			path = SGDDropDownTextFieldUITests;
+			sourceTree = "<group>";
+		};
+		4829A03E1D0AE2F8000CCB74 /* Text field supporting lib */ = {
+			isa = PBXGroup;
+			children = (
+				481E889D1D0AC67900D2183C /* DropDownTable.h */,
+				481E889E1D0AC67900D2183C /* DropDownTable.m */,
+				481E889F1D0AC67900D2183C /* DropdownTableViewCell.h */,
+				481E88A01D0AC67900D2183C /* DropdownTableViewCell.m */,
+				481E88A11D0AC67900D2183C /* SGDDropDownTextField.h */,
+				481E88A21D0AC67900D2183C /* SGDDropDownTextField.m */,
+			);
+			name = "Text field supporting lib";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +296,9 @@
 				481E88721D0AC63400D2183C /* ViewController.m in Sources */,
 				481E886F1D0AC63400D2183C /* AppDelegate.m in Sources */,
 				481E886C1D0AC63400D2183C /* main.m in Sources */,
+				481E88A41D0AC67900D2183C /* DropdownTableViewCell.m in Sources */,
+				481E88A51D0AC67900D2183C /* SGDDropDownTextField.m in Sources */,
+				481E88A31D0AC67900D2183C /* DropDownTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +522,7 @@
 				481E88961D0AC63400D2183C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		481E88971D0AC63400D2183C /* Build configuration list for PBXNativeTarget "SGDDropDownTextFieldTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +531,7 @@
 				481E88991D0AC63400D2183C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		481E889A1D0AC63400D2183C /* Build configuration list for PBXNativeTarget "SGDDropDownTextFieldUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +540,7 @@
 				481E889C1D0AC63400D2183C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

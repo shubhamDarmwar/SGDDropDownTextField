@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--SGDDrop Down Text Field Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +18,126 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField With Suggetion Text And Dropdown" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DII-6B-l6r" customClass="SGDDropDownTextField">
+                                <rect key="frame" x="20" y="20" width="503" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="suggetionText" value="Your suggetion text ."/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="suggetionColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="error" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDropdown" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDownSided" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="SGDDropDownTextFieldDelegate" destination="BYZ-38-t0r" id="9Em-U0-XMi"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField Without Drop Down" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X6c-CI-88a" customClass="SGDDropDownTextField">
+                                <rect key="frame" x="20" y="70" width="503" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="suggetionColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="error" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDropdown" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="suggetionText" value="Please enter value."/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="SGDDropDownTextFieldDelegate" destination="BYZ-38-t0r" id="oqP-ge-Skf"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField With Date Picker" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LEc-Jv-kfh" customClass="SGDDropDownTextField">
+                                <rect key="frame" x="20" y="120" width="503" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="suggetionColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="suggetionText" value="Select Date"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="error" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDatePicker" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDropdown" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="SGDDropDownTextFieldDelegate" destination="BYZ-38-t0r" id="TUR-Vr-5Wd"/>
+                                </connections>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cie-Wx-gKd">
+                                <rect key="frame" x="531" y="26" width="51" height="31"/>
+                                <connections>
+                                    <action selector="setError:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xvy-k1-RLD"/>
+                                </connections>
+                            </switch>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField With Upsided DropDown" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-gf-rxi" customClass="SGDDropDownTextField">
+                                <rect key="frame" x="20" y="471" width="560" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="suggetionColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDropdown" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDownSided" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DII-6B-l6r" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.07" id="3Ik-HJ-8d8"/>
+                            <constraint firstItem="fd4-gf-rxi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4da-yy-iTs"/>
+                            <constraint firstItem="fd4-gf-rxi" firstAttribute="height" secondItem="LEc-Jv-kfh" secondAttribute="height" id="7QK-Jo-gBy"/>
+                            <constraint firstItem="LEc-Jv-kfh" firstAttribute="trailing" secondItem="X6c-CI-88a" secondAttribute="trailing" id="HR1-iD-j8Z"/>
+                            <constraint firstItem="X6c-CI-88a" firstAttribute="top" secondItem="DII-6B-l6r" secondAttribute="bottom" constant="8" id="ICn-wh-Th5"/>
+                            <constraint firstItem="X6c-CI-88a" firstAttribute="trailing" secondItem="DII-6B-l6r" secondAttribute="trailing" id="MD5-W2-gtR"/>
+                            <constraint firstItem="DII-6B-l6r" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NDZ-9p-AxD"/>
+                            <constraint firstItem="LEc-Jv-kfh" firstAttribute="height" secondItem="X6c-CI-88a" secondAttribute="height" id="W5O-NJ-2Ck"/>
+                            <constraint firstItem="LEc-Jv-kfh" firstAttribute="leading" secondItem="X6c-CI-88a" secondAttribute="leading" id="ZoX-Cn-ugp"/>
+                            <constraint firstItem="fd4-gf-rxi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="b9F-Gu-2kI"/>
+                            <constraint firstItem="Cie-Wx-gKd" firstAttribute="centerY" secondItem="DII-6B-l6r" secondAttribute="centerY" id="bHF-CC-gUQ"/>
+                            <constraint firstItem="LEc-Jv-kfh" firstAttribute="top" secondItem="X6c-CI-88a" secondAttribute="bottom" constant="8" id="eU6-0l-beE"/>
+                            <constraint firstItem="X6c-CI-88a" firstAttribute="leading" secondItem="DII-6B-l6r" secondAttribute="leading" id="jtt-gF-WFD"/>
+                            <constraint firstItem="DII-6B-l6r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="me6-5S-UOv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fd4-gf-rxi" secondAttribute="bottom" constant="100" id="mfA-1j-J1I"/>
+                            <constraint firstItem="DII-6B-l6r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pK4-R2-hE5"/>
+                            <constraint firstItem="X6c-CI-88a" firstAttribute="height" secondItem="DII-6B-l6r" secondAttribute="height" id="ulK-b0-gj4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cie-Wx-gKd" secondAttribute="trailing" id="xj3-Zv-6ZL"/>
+                            <constraint firstItem="Cie-Wx-gKd" firstAttribute="leading" secondItem="DII-6B-l6r" secondAttribute="trailing" constant="8" id="yfd-eq-pzy"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="pK4-R2-hE5"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="dropDownTextField" destination="DII-6B-l6r" id="dIJ-gN-ybi"/>
+                        <outlet property="textFieldWithDatePicker" destination="LEc-Jv-kfh" id="uZi-MJ-q0i"/>
+                        <outlet property="textFieldWithUpSidedDropDown" destination="fd4-gf-rxi" id="Prt-ZT-hSf"/>
+                        <outlet property="textFieldWithoutDropDown" destination="X6c-CI-88a" id="0j9-zM-VaK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="323" y="284"/>
         </scene>
     </scenes>
 </document>
