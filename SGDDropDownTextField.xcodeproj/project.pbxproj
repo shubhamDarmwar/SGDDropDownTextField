@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		481E886C1D0AC63400D2183C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E886B1D0AC63400D2183C /* main.m */; };
+		481E886F1D0AC63400D2183C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E886E1D0AC63400D2183C /* AppDelegate.m */; };
+		481E88721D0AC63400D2183C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E88711D0AC63400D2183C /* ViewController.m */; };
+		481E88751D0AC63400D2183C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481E88731D0AC63400D2183C /* Main.storyboard */; };
+		481E88771D0AC63400D2183C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 481E88761D0AC63400D2183C /* Assets.xcassets */; };
+		481E887A1D0AC63400D2183C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 481E88781D0AC63400D2183C /* LaunchScreen.storyboard */; };
+		481E88851D0AC63400D2183C /* SGDDropDownTextFieldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E88841D0AC63400D2183C /* SGDDropDownTextFieldTests.m */; };
+		481E88901D0AC63400D2183C /* SGDDropDownTextFieldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 481E888F1D0AC63400D2183C /* SGDDropDownTextFieldUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		481E88811D0AC63400D2183C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 481E885F1D0AC63400D2183C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 481E88661D0AC63400D2183C;
+			remoteInfo = SGDDropDownTextField;
+		};
+		481E888C1D0AC63400D2183C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 481E885F1D0AC63400D2183C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 481E88661D0AC63400D2183C;
+			remoteInfo = SGDDropDownTextField;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		481E88671D0AC63400D2183C /* SGDDropDownTextField.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGDDropDownTextField.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		481E886B1D0AC63400D2183C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		481E886D1D0AC63400D2183C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		481E886E1D0AC63400D2183C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		481E88701D0AC63400D2183C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		481E88711D0AC63400D2183C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		481E88741D0AC63400D2183C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		481E88761D0AC63400D2183C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		481E88791D0AC63400D2183C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		481E887B1D0AC63400D2183C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481E88801D0AC63400D2183C /* SGDDropDownTextFieldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGDDropDownTextFieldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		481E88841D0AC63400D2183C /* SGDDropDownTextFieldTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGDDropDownTextFieldTests.m; sourceTree = "<group>"; };
+		481E88861D0AC63400D2183C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		481E888B1D0AC63400D2183C /* SGDDropDownTextFieldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGDDropDownTextFieldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		481E888F1D0AC63400D2183C /* SGDDropDownTextFieldUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGDDropDownTextFieldUITests.m; sourceTree = "<group>"; };
+		481E88911D0AC63400D2183C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		481E88641D0AC63400D2183C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E887D1D0AC63400D2183C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E88881D0AC63400D2183C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		481E885E1D0AC63400D2183C = {
+			isa = PBXGroup;
+			children = (
+				481E88691D0AC63400D2183C /* SGDDropDownTextField */,
+				481E88831D0AC63400D2183C /* SGDDropDownTextFieldTests */,
+				481E888E1D0AC63400D2183C /* SGDDropDownTextFieldUITests */,
+				481E88681D0AC63400D2183C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		481E88681D0AC63400D2183C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				481E88671D0AC63400D2183C /* SGDDropDownTextField.app */,
+				481E88801D0AC63400D2183C /* SGDDropDownTextFieldTests.xctest */,
+				481E888B1D0AC63400D2183C /* SGDDropDownTextFieldUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		481E88691D0AC63400D2183C /* SGDDropDownTextField */ = {
+			isa = PBXGroup;
+			children = (
+				481E886D1D0AC63400D2183C /* AppDelegate.h */,
+				481E886E1D0AC63400D2183C /* AppDelegate.m */,
+				481E88701D0AC63400D2183C /* ViewController.h */,
+				481E88711D0AC63400D2183C /* ViewController.m */,
+				481E88731D0AC63400D2183C /* Main.storyboard */,
+				481E88761D0AC63400D2183C /* Assets.xcassets */,
+				481E88781D0AC63400D2183C /* LaunchScreen.storyboard */,
+				481E887B1D0AC63400D2183C /* Info.plist */,
+				481E886A1D0AC63400D2183C /* Supporting Files */,
+			);
+			path = SGDDropDownTextField;
+			sourceTree = "<group>";
+		};
+		481E886A1D0AC63400D2183C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				481E886B1D0AC63400D2183C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		481E88831D0AC63400D2183C /* SGDDropDownTextFieldTests */ = {
+			isa = PBXGroup;
+			children = (
+				481E88841D0AC63400D2183C /* SGDDropDownTextFieldTests.m */,
+				481E88861D0AC63400D2183C /* Info.plist */,
+			);
+			path = SGDDropDownTextFieldTests;
+			sourceTree = "<group>";
+		};
+		481E888E1D0AC63400D2183C /* SGDDropDownTextFieldUITests */ = {
+			isa = PBXGroup;
+			children = (
+				481E888F1D0AC63400D2183C /* SGDDropDownTextFieldUITests.m */,
+				481E88911D0AC63400D2183C /* Info.plist */,
+			);
+			path = SGDDropDownTextFieldUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		481E88661D0AC63400D2183C /* SGDDropDownTextField */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481E88941D0AC63400D2183C /* Build configuration list for PBXNativeTarget "SGDDropDownTextField" */;
+			buildPhases = (
+				481E88631D0AC63400D2183C /* Sources */,
+				481E88641D0AC63400D2183C /* Frameworks */,
+				481E88651D0AC63400D2183C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SGDDropDownTextField;
+			productName = SGDDropDownTextField;
+			productReference = 481E88671D0AC63400D2183C /* SGDDropDownTextField.app */;
+			productType = "com.apple.product-type.application";
+		};
+		481E887F1D0AC63400D2183C /* SGDDropDownTextFieldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481E88971D0AC63400D2183C /* Build configuration list for PBXNativeTarget "SGDDropDownTextFieldTests" */;
+			buildPhases = (
+				481E887C1D0AC63400D2183C /* Sources */,
+				481E887D1D0AC63400D2183C /* Frameworks */,
+				481E887E1D0AC63400D2183C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				481E88821D0AC63400D2183C /* PBXTargetDependency */,
+			);
+			name = SGDDropDownTextFieldTests;
+			productName = SGDDropDownTextFieldTests;
+			productReference = 481E88801D0AC63400D2183C /* SGDDropDownTextFieldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		481E888A1D0AC63400D2183C /* SGDDropDownTextFieldUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 481E889A1D0AC63400D2183C /* Build configuration list for PBXNativeTarget "SGDDropDownTextFieldUITests" */;
+			buildPhases = (
+				481E88871D0AC63400D2183C /* Sources */,
+				481E88881D0AC63400D2183C /* Frameworks */,
+				481E88891D0AC63400D2183C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				481E888D1D0AC63400D2183C /* PBXTargetDependency */,
+			);
+			name = SGDDropDownTextFieldUITests;
+			productName = SGDDropDownTextFieldUITests;
+			productReference = 481E888B1D0AC63400D2183C /* SGDDropDownTextFieldUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		481E885F1D0AC63400D2183C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Shubham Daramwar";
+				TargetAttributes = {
+					481E88661D0AC63400D2183C = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					481E887F1D0AC63400D2183C = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 481E88661D0AC63400D2183C;
+					};
+					481E888A1D0AC63400D2183C = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 481E88661D0AC63400D2183C;
+					};
+				};
+			};
+			buildConfigurationList = 481E88621D0AC63400D2183C /* Build configuration list for PBXProject "SGDDropDownTextField" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 481E885E1D0AC63400D2183C;
+			productRefGroup = 481E88681D0AC63400D2183C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				481E88661D0AC63400D2183C /* SGDDropDownTextField */,
+				481E887F1D0AC63400D2183C /* SGDDropDownTextFieldTests */,
+				481E888A1D0AC63400D2183C /* SGDDropDownTextFieldUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		481E88651D0AC63400D2183C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481E887A1D0AC63400D2183C /* LaunchScreen.storyboard in Resources */,
+				481E88771D0AC63400D2183C /* Assets.xcassets in Resources */,
+				481E88751D0AC63400D2183C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E887E1D0AC63400D2183C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E88891D0AC63400D2183C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		481E88631D0AC63400D2183C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481E88721D0AC63400D2183C /* ViewController.m in Sources */,
+				481E886F1D0AC63400D2183C /* AppDelegate.m in Sources */,
+				481E886C1D0AC63400D2183C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E887C1D0AC63400D2183C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481E88851D0AC63400D2183C /* SGDDropDownTextFieldTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		481E88871D0AC63400D2183C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				481E88901D0AC63400D2183C /* SGDDropDownTextFieldUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		481E88821D0AC63400D2183C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 481E88661D0AC63400D2183C /* SGDDropDownTextField */;
+			targetProxy = 481E88811D0AC63400D2183C /* PBXContainerItemProxy */;
+		};
+		481E888D1D0AC63400D2183C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 481E88661D0AC63400D2183C /* SGDDropDownTextField */;
+			targetProxy = 481E888C1D0AC63400D2183C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		481E88731D0AC63400D2183C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				481E88741D0AC63400D2183C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		481E88781D0AC63400D2183C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				481E88791D0AC63400D2183C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		481E88921D0AC63400D2183C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		481E88931D0AC63400D2183C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		481E88951D0AC63400D2183C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SGDDropDownTextField/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShubhamDaramwar.SGDDropDownTextField;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		481E88961D0AC63400D2183C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SGDDropDownTextField/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShubhamDaramwar.SGDDropDownTextField;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		481E88981D0AC63400D2183C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SGDDropDownTextFieldTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShubhamDaramwar.SGDDropDownTextFieldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SGDDropDownTextField.app/SGDDropDownTextField";
+			};
+			name = Debug;
+		};
+		481E88991D0AC63400D2183C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SGDDropDownTextFieldTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShubhamDaramwar.SGDDropDownTextFieldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SGDDropDownTextField.app/SGDDropDownTextField";
+			};
+			name = Release;
+		};
+		481E889B1D0AC63400D2183C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SGDDropDownTextFieldUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShubhamDaramwar.SGDDropDownTextFieldUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SGDDropDownTextField;
+			};
+			name = Debug;
+		};
+		481E889C1D0AC63400D2183C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SGDDropDownTextFieldUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ShubhamDaramwar.SGDDropDownTextFieldUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SGDDropDownTextField;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		481E88621D0AC63400D2183C /* Build configuration list for PBXProject "SGDDropDownTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481E88921D0AC63400D2183C /* Debug */,
+				481E88931D0AC63400D2183C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		481E88941D0AC63400D2183C /* Build configuration list for PBXNativeTarget "SGDDropDownTextField" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481E88951D0AC63400D2183C /* Debug */,
+				481E88961D0AC63400D2183C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		481E88971D0AC63400D2183C /* Build configuration list for PBXNativeTarget "SGDDropDownTextFieldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481E88981D0AC63400D2183C /* Debug */,
+				481E88991D0AC63400D2183C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		481E889A1D0AC63400D2183C /* Build configuration list for PBXNativeTarget "SGDDropDownTextFieldUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				481E889B1D0AC63400D2183C /* Debug */,
+				481E889C1D0AC63400D2183C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 481E885F1D0AC63400D2183C /* Project object */;
+}
