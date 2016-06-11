@@ -2,8 +2,8 @@
 //  DropdownTableViewCell.m
 //  SGDDropDownTextField
 //
-//  Created by Laxman Murugappan on 5/17/16.
-//  Copyright © 2016 EmpoweringVisions. All rights reserved.
+//  Created by Shbham Daramwar on 10/06/16.
+//  Copyright © 2016 Shubham Daramwar. All rights reserved.
 //
 
 #import "DropdownTableViewCell.h"
