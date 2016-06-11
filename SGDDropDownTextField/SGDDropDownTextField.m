@@ -275,23 +275,6 @@ const int labelPadding = 3;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #pragma mark - SGDDropDownTextFieldDelegate
 #pragma mark -
 -(BOOL)textField:(SGDDropDownTextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
@@ -422,16 +405,8 @@ const int labelPadding = 3;
 
 -(void)presentDropdown{
     [self.dropdownTable reloadData];
-    
-    
-    
-    
-    
-    
     mainFrame1 = [self convertRect:self.bounds toView:nil];
-//    NSLog(@"p == %f",mainFrame1.origin.x);
     CGRect newFrame = [self convertRect:self.bounds toView:nil];
-    
     ///Table height
     float screenHeight = [UIScreen mainScreen].bounds.size.height;
     float maxHeight;
@@ -443,19 +418,13 @@ const int labelPadding = 3;
         maxHeight = newFrame.origin.y - 20;
         minHeight = 25 * self.dropDownlist.count;
     }
-    
-    
-    
     if (self.dropDownlist.count == 0) {
         minHeight = 0;
     }
-    
     float tableHeight =  fminf(minHeight, maxHeight);
     
     // Y Position
-    
     float Y ;
-    
     if (self.isDownSided) {
         if (self.suggetionText.length == 0) {
             Y= newFrame.origin.y + newFrame.size.height + 1 ;
@@ -465,8 +434,6 @@ const int labelPadding = 3;
     }else{
         Y= newFrame.origin.y - tableHeight ;
     }
-    
-    
     [UIView animateWithDuration:0.2 animations:^{
         if (dropdownTable) {
             dropdownTable.frame = CGRectMake(newFrame.origin.x + newFrame.size.width,Y, 0, 0);
@@ -476,10 +443,7 @@ const int labelPadding = 3;
         [dropdownTable removeFromSuperview];
         [dropdownTable.background removeFromSuperview];
         [removeButton removeFromSuperview];
-        /////////////
-        
-        
-        
+   
         if (self.dropDownlist.count != 0) {
             dropdownTable = [DropDownTable sharedInstance];
             dropdownTable.backgroundColor = [UIColor orangeColor];
@@ -584,15 +548,9 @@ const int labelPadding = 3;
     
     //Given size may not account for screen rotation
     int kHeight = MIN(keyboardSize.height,keyboardSize.width);
-    //    int width = MAX(keyboardSize.height,keyboardSize.width);
-    
-    
-    //    mainFrame = [self convertRect:self.bounds toView:nil];
     CGRect screemFrame = [UIScreen mainScreen].bounds;
     //    mainFrame1;
-//    NSLog(@" k == %f",mainFrame1.origin.x);
     if (mainFrame1.origin.x != 0) {
-//        NSLog(@" k == %f",mainFrame1.origin.x);
         float difference = (mainFrame1.origin.y + mainFrame1.size.height) - ( screemFrame.size.height - kHeight);
         
         if (difference > 0) {
@@ -614,15 +572,12 @@ const int labelPadding = 3;
         
         UIToolbar * toolBar = [[UIToolbar alloc]init];
         [toolBar sizeToFit];
-        
         UIBarButtonItem * done = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneClicked:)];
         UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-        
         done.tintColor = [UIColor grayColor];
         [toolBar setItems:@[ flexible,done] animated:YES];
         self.inputAccessoryView = toolBar;
     }
-    
 }
 
 -(void)doneClicked:(UIBarButtonItem *)sender{
