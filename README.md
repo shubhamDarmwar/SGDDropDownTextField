@@ -36,8 +36,9 @@ Spinner(dropdown) like Android text field in your iOS app.
   
 ## How It Looks
 ![Alt text](https://github.com/shubhamdar/SGDDropDownTextField/blob/master/Screen%20Shot%202016-06-10%20at%207.11.08%20PM.png "1")
-
-![Alt text](https://github.com/shubhamdar/SGDDropDownTextField/blob/master/Screen%20Shot%202016-06-10%20at%207.12.10%20PM.png "2")![Alt text](https://github.com/shubhamdar/SGDDropDownTextField/blob/master/Screen%20Shot%202016-06-10%20at%207.12.53%20PM.png "3")![Alt text](https://github.com/shubhamdar/SGDDropDownTextField/blob/master/Screen%20Shot%202016-06-10%20at%207.14.00%20PM.png "4")
+![Alt text](https://github.com/shubhamdar/SGDDropDownTextField/blob/master/Screen%20Shot%202016-06-10%20at%207.12.10%20PM.png "2")
+![Alt text](https://github.com/shubhamdar/SGDDropDownTextField/blob/master/Screen%20Shot%202016-06-10%20at%207.12.53%20PM.png "3")
+![Alt text](https://github.com/shubhamdar/SGDDropDownTextField/blob/master/Screen%20Shot%202016-06-10%20at%207.14.00%20PM.png "4")
 
 ## Contact
 
