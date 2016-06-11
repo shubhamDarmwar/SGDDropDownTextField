@@ -34,6 +34,10 @@ Spinner(dropdown) like Android text field in your iOS app.
   
   Or all these properties can be set by creating instance of SGDDropDownTextField in view controller.
   
+## How It Looks
+![Alt text](http://full/path/to/img.jpg "Optional title")
+
+
 ## Contact
 
 Shubham Daramwar
