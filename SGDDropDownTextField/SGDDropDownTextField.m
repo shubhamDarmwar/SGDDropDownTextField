@@ -18,13 +18,10 @@ const int labelPadding = 3;
     UILabel * suggetionLabel;
     UIView * backView;
     UIButton * removeButton;
-   
+    
     DropdownTableViewCell * cell ;
     UIBezierPath * trianglePath,*linePath ;
     NSIndexPath  *selectedIndexPath;
-   
-   
-//    DropDownView * dropdowntableview;
 }
 @property (nonatomic , retain)  NSString * ctext;
 @property (nonatomic, retain)  UIColor * cTextColor;
@@ -60,8 +57,8 @@ const int labelPadding = 3;
 //    self = [super initWithCoder:aDecoder];
 //    if (self) {
 //        [self customInit];
-//        
-//        
+//
+//
 //    }
 //    return self;
 //}
@@ -78,7 +75,6 @@ const int labelPadding = 3;
     self.textColor = [UIColor clearColor];
     
     customText =[[UILabel alloc]init];
-//    customText.text = self.text;
     customplaceHolder = [[UILabel alloc]init];
     suggetionLabel =[[UILabel alloc]init];
     self.dropDownlist = [[NSMutableArray alloc]init];
@@ -96,7 +92,7 @@ const int labelPadding = 3;
                                                  name:UIKeyboardDidShowNotification
                                                object:nil];
     mainFrame1 = CGRectMake(0, 0, 100, 100);
-    NSLog(@"i == %f",mainFrame1.origin.x);
+//    NSLog(@"i == %f",mainFrame1.origin.x);
     self.dateFormat = @"dd MMMM yy";
     [self creatDatePicker];
 }
@@ -104,147 +100,136 @@ const int labelPadding = 3;
 
 - (void)drawRect:(CGRect)rect {
     
-//    if (_dropDownlist.count != 0) {
-    
-        
-        if (self.placeholder) {
-            self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor clearColor]}];
-        }
-        
-        
-        self.textColor = [UIColor clearColor];
-        // @@@@@@@@@@ HORIZONTAL LINE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    if (self.placeholder) {
+        self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:self.placeholder attributes:@{NSForegroundColorAttributeName: [UIColor clearColor]}];
+    }
+    self.textColor = [UIColor clearColor];
+    // @@@@@@@@@@ HORIZONTAL LINE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
     
     
     float mid = CGRectGetHeight(rect)/2;
     [linePath moveToPoint:CGPointMake(0,mid)];//rect.size.height/2)];
     
-        [linePath addLineToPoint:CGPointMake( rect.size.width, mid )];
-        CAShapeLayer * lineLayer = [CAShapeLayer layer];
-        lineLayer.lineWidth = 1.0;
-        if (self.error) {
-            lineLayer.strokeColor = self.suggetionColor.CGColor;
-            lineLayer.fillColor = self.suggetionColor.CGColor;
-        }else{
-            lineLayer.strokeColor = self.bottomColor.CGColor;
-            lineLayer.fillColor = self.bottomColor.CGColor;
-        }
-        
+    [linePath addLineToPoint:CGPointMake( rect.size.width, mid )];
+    CAShapeLayer * lineLayer = [CAShapeLayer layer];
+    lineLayer.lineWidth = 1.0;
+    if (self.error) {
+        lineLayer.strokeColor = self.suggetionColor.CGColor;
+        lineLayer.fillColor = self.suggetionColor.CGColor;
+    }else{
+        lineLayer.strokeColor = self.bottomColor.CGColor;
+        lineLayer.fillColor = self.bottomColor.CGColor;
+    }
+    lineLayer.path = linePath.CGPath;
+    [self.layer addSublayer:lineLayer];
     
+    // @@@@@@@@@@ TRIANGLE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    float triangleConst = rect.size.height/5 ;
+    [trianglePath moveToPoint:CGPointMake(rect.size.width - triangleConst, mid)];
+    [trianglePath addLineToPoint:CGPointMake(rect.size.width, mid)];
+    [trianglePath addLineToPoint:CGPointMake(rect.size.width, mid - triangleConst)];
+    [trianglePath addLineToPoint:CGPointMake(rect.size.width - triangleConst , mid)];
+    CAShapeLayer * triangleLayer = [CAShapeLayer layer];
+    triangleLayer.lineWidth = 1.0;
+    if (self.error) {
+        triangleLayer.strokeColor = self.suggetionColor.CGColor;
+        triangleLayer.fillColor  = self.suggetionColor.CGColor;
+    }else{
+        triangleLayer.fillColor = self.bottomColor.CGColor;
+        triangleLayer.strokeColor = self.bottomColor.CGColor;
+    }
+    triangleLayer.path = trianglePath.CGPath ;
     
-        lineLayer.path = linePath.CGPath;
-        [self.layer addSublayer:lineLayer];
-    
-    
-        // @@@@@@@@@@ TRIANGLE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-        
-        
-        float triangleConst = rect.size.height/5 ;
-        [trianglePath moveToPoint:CGPointMake(rect.size.width - triangleConst, mid)];
-        [trianglePath addLineToPoint:CGPointMake(rect.size.width, mid)];
-        [trianglePath addLineToPoint:CGPointMake(rect.size.width, mid - triangleConst)];
-        [trianglePath addLineToPoint:CGPointMake(rect.size.width - triangleConst , mid)];
-        CAShapeLayer * triangleLayer = [CAShapeLayer layer];
-        triangleLayer.lineWidth = 1.0;
-        if (self.error) {
-            triangleLayer.strokeColor = self.suggetionColor.CGColor;
-            triangleLayer.fillColor  = self.suggetionColor.CGColor;
-        }else{
-            triangleLayer.fillColor = self.bottomColor.CGColor;
-            triangleLayer.strokeColor = self.bottomColor.CGColor;
-        }
-        triangleLayer.path = trianglePath.CGPath ;
-   
     if (self.isDropdown) {
         [self.layer addSublayer:triangleLayer];
     }
     
-   
+    
     // @@@@@@@@@ CUSTOM PLACEHOLDER @@@@@@@@@@@@@@@@@@@@@@@@@
     
     customplaceHolder.textAlignment = self.textAlignment;
-        customplaceHolder.frame = CGRectMake(labelPadding, 0, self.frame.size.width, self.frame.size.height/2 - 1);
+    customplaceHolder.frame = CGRectMake(labelPadding, 0, self.frame.size.width, self.frame.size.height/2 - 1);
     
     
     customplaceHolder.userInteractionEnabled = NO;
-        if (self.ctext.length == 0 ) {
-            
-            customplaceHolder.text = self.placeholder;//self.cplaceholder;
-        }else{
-            customplaceHolder.text = @"";
-        }
+    if (self.ctext.length == 0 ) {
         
-        
-        
-        customplaceHolder.textColor = [UIColor grayColor];
-        customplaceHolder.backgroundColor = [UIColor clearColor];
-        customplaceHolder.font = self.font;
-        [self addSubview:customplaceHolder];
-        
-        //@@@@@@@@@ CUSTOM TEXT @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-   customText.textAlignment = self.textAlignment;
+        customplaceHolder.text = self.placeholder;//self.cplaceholder;
+    }else{
+        customplaceHolder.text = @"";
+    }
+    
+    
+    
+    customplaceHolder.textColor = [UIColor grayColor];
+    customplaceHolder.backgroundColor = [UIColor clearColor];
+    customplaceHolder.font = self.font;
+    [self addSubview:customplaceHolder];
+    
+    //@@@@@@@@@ CUSTOM TEXT @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    customText.textAlignment = self.textAlignment;
     
     // if (self.suggetionText.length != 0) {
-   
-    customText.frame = CGRectMake(labelPadding, -2,
-                                      self.frame.size.width, self.frame.size.height/2);
-   
     
-        customText.text = self.ctext;
-        customText.textColor =self.cTextColor;
-        customText.backgroundColor = [UIColor clearColor];
-        customText.font = self.font;
-        customText.userInteractionEnabled = NO;
-        [self addSubview:customText];
-        
-        // @@@@@@@@@@ TO CUT HALF CURSOR @@@@@@@@@@@@@@@@@@@
-        
-        backView = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height/2 + 1,
-                                                           self.frame.size.width, self.frame.size.height/2)];
-        backView.backgroundColor = self.backgroundColor;
+    customText.frame = CGRectMake(labelPadding, -2,
+                                  self.frame.size.width, self.frame.size.height/2);
+    
+    
+    customText.text = self.ctext;
+    customText.textColor =self.cTextColor;
+    customText.backgroundColor = [UIColor clearColor];
+    customText.font = self.font;
+    customText.userInteractionEnabled = NO;
+    [self addSubview:customText];
+    
+    // @@@@@@@@@@ TO CUT HALF CURSOR @@@@@@@@@@@@@@@@@@@
+    
+    backView = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height/2 + 1,
+                                                       self.frame.size.width, self.frame.size.height/2)];
+    backView.backgroundColor = self.backgroundColor;
     backView.userInteractionEnabled = NO;
-        [self addSubview:backView];
-        
-        
-        //@@@@@@@@ SUGGETION LABLE @@@@@@@@@@@@@@@@@@@@
-        
-        suggetionLabel.frame = CGRectMake(labelPadding, self.frame.size.height/2 ,
-                                          self.frame.size.width, self.frame.size.height/2);
-        suggetionLabel.text = self.suggetionText;
-        suggetionLabel.textColor = self.suggetionColor;
-        suggetionLabel.backgroundColor = [UIColor clearColor];
-        suggetionLabel.font = [self.font fontWithSize:self.font.pointSize - 3 ];
-        suggetionLabel.hidden = YES;
+    [self addSubview:backView];
+    
+    
+    //@@@@@@@@ SUGGETION LABLE @@@@@@@@@@@@@@@@@@@@
+    
+    suggetionLabel.frame = CGRectMake(labelPadding, self.frame.size.height/2 ,
+                                      self.frame.size.width, self.frame.size.height/2);
+    suggetionLabel.text = self.suggetionText;
+    suggetionLabel.textColor = self.suggetionColor;
+    suggetionLabel.backgroundColor = [UIColor clearColor];
+    suggetionLabel.font = [self.font fontWithSize:self.font.pointSize - 3 ];
+    suggetionLabel.hidden = YES;
     suggetionLabel.userInteractionEnabled = NO;
     
-        [self addSubview:suggetionLabel];
-        if (self.error) {
-            suggetionLabel.hidden = NO;
-        }else{
-            suggetionLabel.hidden = YES;
-        }
-        
-        self.text = self.ctext; 
-
+    [self addSubview:suggetionLabel];
+    if (self.error) {
+        suggetionLabel.hidden = NO;
+    }else{
+        suggetionLabel.hidden = YES;
+    }
+    
+    self.text = self.ctext;
+    
     
     
     // @@@@@@@ IF NO SUGGETION @@@@@@@@@@@@@@@@@@
     
     if (self.suggetionText.length == 0) {
         
-
+        
         [linePath removeAllPoints];
         [triangleLayer removeFromSuperlayer];
         [trianglePath removeAllPoints];
-    
+        
         float mid = CGRectGetHeight(rect);
         
-        customplaceHolder.frame = CGRectMake(labelPadding, mid/2, self.frame.size.width, self.frame.size.height/2);
+        customplaceHolder.frame = CGRectMake(labelPadding, 0, self.frame.size.width, self.frame.size.height);
         
-        customText.frame = CGRectMake(labelPadding, mid/2,
-                                      self.frame.size.width, self.frame.size.height/2);
+        customText.frame = CGRectMake(labelPadding, 0,
+                                      self.frame.size.width, self.frame.size.height);
         
-    // @@@@@@@@@@ HORIZONTAL LINE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        // @@@@@@@@@@ HORIZONTAL LINE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
         
         
         [linePath moveToPoint:CGPointMake(0,mid)];
@@ -283,7 +268,7 @@ const int labelPadding = 3;
         }
         triangleLayer.path = trianglePath.CGPath ;
         if (_isDropdown) {
-        [self.layer addSublayer:triangleLayer];
+            [self.layer addSublayer:triangleLayer];
         }
     }
     
@@ -317,9 +302,9 @@ const int labelPadding = 3;
         
         
         bool returnFlag = [SGDDropDownTextFieldDelegate textField:textField shouldChangeCharactersInRange:range replacementString:string];
-//        returnFlag = YES;
+        //        returnFlag = YES;
         if (returnFlag) {
-           if ([self.text isEqualToString: @""]) {
+            if ([self.text isEqualToString: @""]) {
                 self.ctext = string;
             }else{
                 self.ctext = [self.ctext stringByAppendingString:string];
@@ -351,7 +336,7 @@ const int labelPadding = 3;
     }
     UIView * view = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
     [UIView animateWithDuration:0.3 animations:^{
-    view.frame = CGRectMake(0,0 , view.frame.size.width, view.frame.size.height);
+        view.frame = CGRectMake(0,0 , view.frame.size.width, view.frame.size.height);
     }];
 }
 -(BOOL)textFieldShouldBeginEditing:(SGDDropDownTextField *)textField{
@@ -382,7 +367,7 @@ const int labelPadding = 3;
             [self resignFirstResponder];
         }
     }
-        return YES;
+    return YES;
 }
 
 -(CGRect)caretRectForPosition:(UITextPosition *)position{
@@ -394,10 +379,6 @@ const int labelPadding = 3;
     
     return originalRect;
 }
-
-//- (CGRect)caretRectForPosition:(UITextPosition *)position {
-//    return CGRectZero;
-//}
 
 #pragma mark
 #pragma mark SETTER METHODES
@@ -425,7 +406,7 @@ const int labelPadding = 3;
 -(void)setDropDownlist:(NSMutableArray *)dropDownlist{
     
     _dropDownlist = dropDownlist;
-//    [self createTable];
+    //    [self createTable];
 }
 
 -(void)setIsDatePicker:(BOOL)isDatePicker{
@@ -448,7 +429,7 @@ const int labelPadding = 3;
     
     
     mainFrame1 = [self convertRect:self.bounds toView:nil];
-    NSLog(@"p == %f",mainFrame1.origin.x);
+//    NSLog(@"p == %f",mainFrame1.origin.x);
     CGRect newFrame = [self convertRect:self.bounds toView:nil];
     
     ///Table height
@@ -482,7 +463,7 @@ const int labelPadding = 3;
             Y  = newFrame.origin.y + newFrame.size.height/2 +1 ;
         }
     }else{
-            Y= newFrame.origin.y - tableHeight ;
+        Y= newFrame.origin.y - tableHeight ;
     }
     
     
@@ -500,25 +481,8 @@ const int labelPadding = 3;
         
         
         if (self.dropDownlist.count != 0) {
-            
-//            if (self.isDownSided) {
-            
-//                float screenHeight = [UIScreen mainScreen].bounds.size.height;
-//                
-//                
-//                float maxHeight = screenHeight - newFrame.origin.y - newFrame.size.height -20;
-//                float minHeight = 25 * self.dropDownlist.count;
-//                if (self.dropDownlist.count == 0) {
-//                    minHeight = 0;
-//                }
-//                
-//                float tableHeight =  fminf(minHeight, maxHeight);
-//                
-            
-                
-                dropdownTable = [DropDownTable sharedInstance];
-                dropdownTable.backgroundColor = [UIColor orangeColor];
-//                dropdownTable.frame = CGRectMake(newFrame.origin.x + newFrame.size.width,Y, 0, 0);
+            dropdownTable = [DropDownTable sharedInstance];
+            dropdownTable.backgroundColor = [UIColor orangeColor];
             if (self.isDownSided) {
                 dropdownTable.frame = CGRectMake(newFrame.origin.x + newFrame.size.width,Y, 0, 0);
                 dropdownTable.background.frame = CGRectMake(newFrame.origin.x + newFrame.size.width ,Y,0, 0);
@@ -527,75 +491,23 @@ const int labelPadding = 3;
                 dropdownTable.background.frame = CGRectMake(newFrame.origin.x + newFrame.size.width ,newFrame.origin.y,0, 0);
             }
             
+            [UIView animateWithDuration:0.2 animations:^{
+                dropdownTable.frame = CGRectMake(newFrame.origin.x, Y, newFrame.size.width, tableHeight);
+                dropdownTable.background.frame = CGRectMake(newFrame.origin.x,Y, newFrame.size.width, tableHeight);
+            }];
+            dropdownTable.delegate = self;
+            dropdownTable.dataSource = self;
+            [dropdownTable registerClass:[DropdownTableViewCell class] forCellReuseIdentifier:@"cell"];
+            dropdownTable.backgroundColor = [UIColor whiteColor];
+            dropdownTable.separatorStyle = UITableViewCellSeparatorStyleNone;
             
-            
-                [UIView animateWithDuration:0.2 animations:^{
-                    
-                    
-                    dropdownTable.frame = CGRectMake(newFrame.origin.x, Y, newFrame.size.width, tableHeight);
-                    dropdownTable.background.frame = CGRectMake(newFrame.origin.x,Y, newFrame.size.width, tableHeight);
-                }];
-            
-            
-            
-                dropdownTable.delegate = self;
-                dropdownTable.dataSource = self;
-                [dropdownTable registerClass:[DropdownTableViewCell class] forCellReuseIdentifier:@"cell"];
-                dropdownTable.backgroundColor = [UIColor whiteColor];
-                dropdownTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-                
-                //@@@@@@@@@@@@@ BACKGROUD BUTTON @@@@@@@@@@@@@@@
-                removeButton = [[UIButton alloc]initWithFrame:[UIScreen mainScreen].bounds];
-                [removeButton addTarget:self action:@selector(hideDropdown) forControlEvents:UIControlEventTouchUpInside];
-                [self.superview.window addSubview:removeButton];
-                //        dropdownTable.contentInset = UIEdgeInsetsMake(0,labelPadding - 15, 0, 0);
-                [self.superview.window addSubview:dropdownTable.background];
-                [self.superview.window addSubview:dropdownTable];
-            }
-            
-            
-            // @@@@@@@@@@@@@@@ UP Sided List @@@@@@@@@@@@@@@
-            
-//            else{
-//                
-//                float screenHeight = [UIScreen mainScreen].bounds.size.height;
-//                
-//                
-//                float maxHeight = newFrame.origin.y;
-//                float minHeight = 25 * self.dropDownlist.count;
-//                if (self.dropDownlist.count == 0) {
-//                    minHeight = 0;
-//                }
-//                
-//                float tableHeight =  fminf(minHeight, maxHeight);
-//                
-//                
-//                
-//                dropdownTable = [DropDownTable sharedInstance];
-//                dropdownTable.backgroundColor = [UIColor orangeColor];
-//                dropdownTable.frame = CGRectMake(newFrame.origin.x + newFrame.size.width,Y, 0, 0);
-//                dropdownTable.background.frame = CGRectMake(newFrame.origin.x + newFrame.size.width ,Y,0, 0);
-//                [UIView animateWithDuration:0.2 animations:^{
-//                    
-//                    
-//                    dropdownTable.frame = CGRectMake(newFrame.origin.x, Y, newFrame.size.width, tableHeight);
-//                    dropdownTable.background.frame = CGRectMake(newFrame.origin.x,Y, newFrame.size.width, tableHeight);
-//                }];
-//                dropdownTable.delegate = self;
-//                dropdownTable.dataSource = self;
-//                [dropdownTable registerClass:[DropdownTableViewCell class] forCellReuseIdentifier:@"cell"];
-//                dropdownTable.backgroundColor = [UIColor whiteColor];
-//                dropdownTable.separatorStyle = UITableViewCellSeparatorStyleNone;
-//                
-//                //@@@@@@@@@@@@@ BACKGROUD BUTTON @@@@@@@@@@@@@@@
-//                removeButton = [[UIButton alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//                [removeButton addTarget:self action:@selector(hideDropdown) forControlEvents:UIControlEventTouchUpInside];
-//                [self.superview.window addSubview:removeButton];
-//                //        dropdownTable.contentInset = UIEdgeInsetsMake(0,labelPadding - 15, 0, 0);
-//                [self.superview.window addSubview:dropdownTable.background];
-//                [self.superview.window addSubview:dropdownTable];
-//            }
-//        }
+            //@@@@@@@@@@@@@ BACKGROUD BUTTON @@@@@@@@@@@@@@@
+            removeButton = [[UIButton alloc]initWithFrame:[UIScreen mainScreen].bounds];
+            [removeButton addTarget:self action:@selector(hideDropdown) forControlEvents:UIControlEventTouchUpInside];
+            [self.superview.window addSubview:removeButton];
+            [self.superview.window addSubview:dropdownTable.background];
+            [self.superview.window addSubview:dropdownTable];
+        }
     }
      ];
 }
@@ -610,25 +522,19 @@ const int labelPadding = 3;
         Y  = newFrame.origin.y + newFrame.size.height/2 +1 ;
     }
     
-    
-    
-    
-    
     if (dropdownTable) {
         
-    [UIView animateWithDuration:0.2 animations:^{
-        dropdownTable.frame = CGRectMake(newFrame.origin.x + newFrame.size.width,Y, 0, 0);
-        dropdownTable.background.frame = CGRectMake(newFrame.origin.x + newFrame.size.width,Y, 0, 0);
-    }completion:^(BOOL finished){
-        [dropdownTable removeFromSuperview];
-        [dropdownTable.background removeFromSuperview];
-        [removeButton removeFromSuperview];
-    }];
+        [UIView animateWithDuration:0.2 animations:^{
+            dropdownTable.frame = CGRectMake(newFrame.origin.x + newFrame.size.width,Y, 0, 0);
+            dropdownTable.background.frame = CGRectMake(newFrame.origin.x + newFrame.size.width,Y, 0, 0);
+        }completion:^(BOOL finished){
+            [dropdownTable removeFromSuperview];
+            [dropdownTable.background removeFromSuperview];
+            [removeButton removeFromSuperview];
+        }];
     }
 }
-//+(void)removeDropdown{
-//    [self hideDropdown];
-//}
+
 #pragma mark
 #pragma mark TABLEVIEW DELEGATE METHODES
 #pragma mark
@@ -647,22 +553,12 @@ const int labelPadding = 3;
     cell.textLabel.text = (self.dropDownlist)[indexPath.row];
     cell.textLabel.font = self.font;
     cell.textLabel.adjustsFontSizeToFitWidth = YES;
-    
-//    UILabel * title = [[UILabel alloc]initWithFrame:cell.frame];
-    
-    
     cell.selectionStyle = UITableViewCellEditingStyleNone;
     if (selectedIndexPath.row == indexPath.row) {
         cell.textLabel.textColor = [UIColor colorWithRed:186/255.f green:34/255.f blue:59/255.f alpha:1];
     }else{
         cell.textLabel.textColor = [UIColor blackColor];
     }
-    
-//    title.text = cell.textLabel.text;
-//    title.font = cell.textLabel.font;
-//    title.adjustsFontSizeToFitWidth = YES;
-//    title.backgroundColor = [UIColor yellowColor];
-//    [cell addSubview:title];
     return cell;
 }
 
@@ -688,19 +584,19 @@ const int labelPadding = 3;
     
     //Given size may not account for screen rotation
     int kHeight = MIN(keyboardSize.height,keyboardSize.width);
-//    int width = MAX(keyboardSize.height,keyboardSize.width);
+    //    int width = MAX(keyboardSize.height,keyboardSize.width);
     
     
-//    mainFrame = [self convertRect:self.bounds toView:nil];
+    //    mainFrame = [self convertRect:self.bounds toView:nil];
     CGRect screemFrame = [UIScreen mainScreen].bounds;
-//    mainFrame1;
-    NSLog(@" k == %f",mainFrame1.origin.x);
+    //    mainFrame1;
+//    NSLog(@" k == %f",mainFrame1.origin.x);
     if (mainFrame1.origin.x != 0) {
-        NSLog(@" k == %f",mainFrame1.origin.x);
+//        NSLog(@" k == %f",mainFrame1.origin.x);
         float difference = (mainFrame1.origin.y + mainFrame1.size.height) - ( screemFrame.size.height - kHeight);
         
         if (difference > 0) {
-             UIView * view = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
+            UIView * view = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
             [UIView animateWithDuration:0.3 animations:^{
                 view.frame = CGRectMake(0, - difference , view.frame.size.width, view.frame.size.height);
             }];
@@ -721,7 +617,7 @@ const int labelPadding = 3;
         
         UIBarButtonItem * done = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(doneClicked:)];
         UIBarButtonItem *flexible = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
-
+        
         done.tintColor = [UIColor grayColor];
         [toolBar setItems:@[ flexible,done] animated:YES];
         self.inputAccessoryView = toolBar;

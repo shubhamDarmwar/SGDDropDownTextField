@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet SGDDropDownTextField *textFieldWithoutDropDown;
 @property (weak, nonatomic) IBOutlet SGDDropDownTextField *textFieldWithDatePicker;
 @property (weak, nonatomic) IBOutlet SGDDropDownTextField *textFieldWithUpSidedDropDown;
+@property (weak, nonatomic) IBOutlet SGDDropDownTextField *textFieldWithoutDropdownAndSuggetion;
 @end
 

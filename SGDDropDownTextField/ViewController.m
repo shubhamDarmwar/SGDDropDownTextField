@@ -45,7 +45,7 @@
 }
 -(BOOL)textFieldShouldBeginEditing:(SGDDropDownTextField *)textField{
     if (textField==self.textFieldWithoutDropDown ||
-        textField == self.textFieldWithDatePicker) {
+        textField == self.textFieldWithDatePicker || textField == self.textFieldWithoutDropdownAndSuggetion) {
         return YES;
     }
     return NO;
@@ -53,7 +53,7 @@
 
 -(BOOL)textField:(SGDDropDownTextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
     if (textField==self.textFieldWithoutDropDown ||
-        textField == self.textFieldWithDatePicker ) {
+        textField == self.textFieldWithDatePicker || textField == self.textFieldWithoutDropdownAndSuggetion ) {
         return YES;
     }
     return NO;
