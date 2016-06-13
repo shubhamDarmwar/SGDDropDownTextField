@@ -84,8 +84,8 @@
                                     <action selector="setError:" destination="BYZ-38-t0r" eventType="valueChanged" id="Xvy-k1-RLD"/>
                                 </connections>
                             </switch>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField With Upsided DropDown" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-gf-rxi" customClass="SGDDropDownTextField">
-                                <rect key="frame" x="20" y="471" width="560" height="42"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField With Upsided DropDown" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fd4-gf-rxi" customClass="SGDDropDownTextField">
+                                <rect key="frame" x="20" y="458" width="560" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -99,8 +99,8 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isDownSided" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField without dropdown and suggestion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZd-am-Nz9" customClass="SGDDropDownTextField">
-                                <rect key="frame" x="20" y="170" width="503" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="TextField without dropdown and suggestion" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KZd-am-Nz9" customClass="SGDDropDownTextField">
+                                <rect key="frame" x="20" y="170" width="503" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
@@ -116,6 +116,26 @@
                                     <outlet property="SGDDropDownTextFieldDelegate" destination="BYZ-38-t0r" id="slF-HK-beE"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Simple TextField" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="slM-AH-9Ie" customClass="SGDDropDownTextField">
+                                <rect key="frame" x="20" y="508" width="560" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="bottomColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="suggetionColor">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="error" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDropdown" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDownSided" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isDatePicker" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="SGDDropDownTextFieldDelegate" destination="BYZ-38-t0r" id="aie-sL-FWA"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -123,6 +143,7 @@
                             <constraint firstItem="fd4-gf-rxi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="4da-yy-iTs"/>
                             <constraint firstItem="fd4-gf-rxi" firstAttribute="height" secondItem="LEc-Jv-kfh" secondAttribute="height" id="7QK-Jo-gBy"/>
                             <constraint firstItem="KZd-am-Nz9" firstAttribute="leading" secondItem="LEc-Jv-kfh" secondAttribute="leading" id="9pX-bk-HnO"/>
+                            <constraint firstItem="slM-AH-9Ie" firstAttribute="leading" secondItem="fd4-gf-rxi" secondAttribute="leading" id="Cyi-xc-q9Q"/>
                             <constraint firstItem="LEc-Jv-kfh" firstAttribute="trailing" secondItem="X6c-CI-88a" secondAttribute="trailing" id="HR1-iD-j8Z"/>
                             <constraint firstItem="X6c-CI-88a" firstAttribute="top" secondItem="DII-6B-l6r" secondAttribute="bottom" constant="8" id="ICn-wh-Th5"/>
                             <constraint firstItem="X6c-CI-88a" firstAttribute="trailing" secondItem="DII-6B-l6r" secondAttribute="trailing" id="MD5-W2-gtR"/>
@@ -134,11 +155,15 @@
                             <constraint firstItem="fd4-gf-rxi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="b9F-Gu-2kI"/>
                             <constraint firstItem="Cie-Wx-gKd" firstAttribute="centerY" secondItem="DII-6B-l6r" secondAttribute="centerY" id="bHF-CC-gUQ"/>
                             <constraint firstItem="LEc-Jv-kfh" firstAttribute="top" secondItem="X6c-CI-88a" secondAttribute="bottom" constant="8" id="eU6-0l-beE"/>
+                            <constraint firstItem="slM-AH-9Ie" firstAttribute="height" secondItem="fd4-gf-rxi" secondAttribute="height" id="fxN-if-KzN"/>
+                            <constraint firstItem="slM-AH-9Ie" firstAttribute="top" secondItem="fd4-gf-rxi" secondAttribute="bottom" constant="8" id="i5t-Up-Bc4"/>
                             <constraint firstItem="X6c-CI-88a" firstAttribute="leading" secondItem="DII-6B-l6r" secondAttribute="leading" id="jtt-gF-WFD"/>
                             <constraint firstItem="DII-6B-l6r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="me6-5S-UOv"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fd4-gf-rxi" secondAttribute="bottom" constant="100" id="mfA-1j-J1I"/>
+                            <constraint firstItem="slM-AH-9Ie" firstAttribute="width" secondItem="fd4-gf-rxi" secondAttribute="width" id="op0-3w-wqt"/>
                             <constraint firstItem="DII-6B-l6r" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pK4-R2-hE5"/>
                             <constraint firstItem="KZd-am-Nz9" firstAttribute="height" secondItem="LEc-Jv-kfh" secondAttribute="height" id="uCJ-4C-7PA"/>
+                            <constraint firstItem="slM-AH-9Ie" firstAttribute="trailing" secondItem="fd4-gf-rxi" secondAttribute="trailing" id="udJ-0v-Q3w"/>
                             <constraint firstItem="X6c-CI-88a" firstAttribute="height" secondItem="DII-6B-l6r" secondAttribute="height" id="ulK-b0-gj4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Cie-Wx-gKd" secondAttribute="trailing" id="xj3-Zv-6ZL"/>
                             <constraint firstItem="Cie-Wx-gKd" firstAttribute="leading" secondItem="DII-6B-l6r" secondAttribute="trailing" constant="8" id="yfd-eq-pzy"/>
@@ -151,6 +176,7 @@
                     </view>
                     <connections>
                         <outlet property="dropDownTextField" destination="DII-6B-l6r" id="dIJ-gN-ybi"/>
+                        <outlet property="simpleTextfield" destination="slM-AH-9Ie" id="6yt-9T-f4w"/>
                         <outlet property="textFieldWithDatePicker" destination="LEc-Jv-kfh" id="uZi-MJ-q0i"/>
                         <outlet property="textFieldWithUpSidedDropDown" destination="fd4-gf-rxi" id="Prt-ZT-hSf"/>
                         <outlet property="textFieldWithoutDropDown" destination="X6c-CI-88a" id="0j9-zM-VaK"/>

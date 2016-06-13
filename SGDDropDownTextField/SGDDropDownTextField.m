@@ -87,10 +87,10 @@ const int labelPadding = 3;
     self.leftViewMode = UITextFieldViewModeAlways;
     self.leftView = paddingView;
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardWasShown:)
-                                                 name:UIKeyboardDidShowNotification
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(keyboardWasShown:)
+//                                                 name:UIKeyboardDidShowNotification
+//                                               object:nil];
     mainFrame1 = CGRectMake(0, 0, 100, 100);
 //    NSLog(@"i == %f",mainFrame1.origin.x);
     self.dateFormat = @"dd MMMM yy";
@@ -303,6 +303,10 @@ const int labelPadding = 3;
 -(void)textFieldDidBeginEditing:(SGDDropDownTextField *)textField{
     [self setNeedsDisplay];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification
+                                               object:nil];
     
     [self presentDropdown];
     if ([SGDDropDownTextFieldDelegate respondsToSelector:@selector(textFieldDidBeginEditing:)]) {
@@ -311,6 +315,9 @@ const int labelPadding = 3;
 }
 
 -(void)textFieldDidEndEditing:(SGDDropDownTextField *)textField{
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:UIKeyboardDidShowNotification];
+    
     if ([SGDDropDownTextFieldDelegate respondsToSelector:@selector(textFieldDidEndEditing:)]) {
         [SGDDropDownTextFieldDelegate textFieldDidEndEditing:textField];
     }
