@@ -20,7 +20,6 @@ static DropDownTable * sharedInstance = nil;
 
 }*/
 
-
 +(DropDownTable *)sharedInstance{
     if (sharedInstance == nil) {
         sharedInstance = [[super allocWithZone:NULL]init];
@@ -31,13 +30,7 @@ static DropDownTable * sharedInstance = nil;
         sharedInstance.background.layer.shadowOpacity = 0.5;
         sharedInstance.background.clipsToBounds = NO;
         sharedInstance.bounces = NO;
-        
-    
     }
-    
-    
-    
-    
     return sharedInstance;
 }
 

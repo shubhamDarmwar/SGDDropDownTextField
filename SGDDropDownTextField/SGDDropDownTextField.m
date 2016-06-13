@@ -210,9 +210,6 @@ const int labelPadding = 3;
     }
     
     self.text = self.ctext;
-    
-    
-    
     // @@@@@@@ IF NO SUGGETION @@@@@@@@@@@@@@@@@@
     
     if (self.suggetionText.length == 0) {

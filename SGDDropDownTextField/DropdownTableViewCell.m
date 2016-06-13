@@ -25,9 +25,6 @@
 -(void)layoutSubviews{
     [super layoutSubviews];
     self.textLabel.frame = CGRectMake(self.frame.origin.x + 3, self.textLabel.frame.origin.y, self.frame.size.width - 3, self.textLabel.frame.size.height);
-    
-//    NSLog(@"cell frame %@",self.frame);
-    
 }
 
 @end
