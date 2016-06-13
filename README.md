@@ -9,6 +9,7 @@ Spinner(dropdown) like Android text field in your iOS app.
 - Drop down list
 - Inbuilt Date Picker
 - Suggestion text
+- Auto scroll screen when keyboard appears
 
 ## How To Use
 
